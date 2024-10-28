@@ -12,14 +12,14 @@ async function setDateRangeInput(value) {
     await dateRangeInputParam.changeValueAsync(value);
 }
 
-// Function to clear Date Range Input if Dynamic Start or End Date is manually changed
+// Function to clear Date Range Input if PARAM Date Start or PARAM Date End is manually changed
 async function clearDateRangeInputIfNeeded(startDateChanged, endDateChanged) {
     if (startDateChanged || endDateChanged) {
         await setDateRangeInput(""); // Clear Date Range Input
     }
 }
 
-// Function to dynamically update Dynamic Start Date and Dynamic End Date based on Date Range Input
+// Function to dynamically update PARAM Date Start and PARAM Date End based on Date Range Input
 async function updateDateRangeFromInput() {
     const params = await tableau.extensions.dashboardContent.dashboard.getParametersAsync();
     const dateRangeInputParam = params.find(p => p.name === "Date Range Input");
@@ -34,7 +34,7 @@ async function updateDateRangeFromInput() {
         const today = new Date();
         let startDate;
 
-        // Calculate Dynamic Start Date based on unit
+        // Calculate PARAM Date Start based on unit
         switch(unit) {
             case "y":
             case "yr":
@@ -51,12 +51,12 @@ async function updateDateRangeFromInput() {
                 break;
         }
 
-        // Update Dynamic Start Date and Dynamic End Date parameters
-        const startDateParam = params.find(p => p.name === "Dynamic Start Date");
-        const endDateParam = params.find(p => p.name === "Dynamic End Date");
+        // Update PARAM Date Start and PARAM Date End parameters
+        const startDateParam = params.find(p => p.name === "PARAM Date Start");
+        const endDateParam = params.find(p => p.name === "PARAM Date End");
 
         await startDateParam.changeValueAsync(startDate);
-        await endDateParam.changeValueAsync(new Date()); // Dynamic End Date is set to today's date
+        await endDateParam.changeValueAsync(new Date()); // PARAM Date End is set to today's date
     }
 }
 
@@ -68,8 +68,8 @@ async function initializeParameterListeners() {
         if (param.name === "Date Range Input") {
             param.addEventListener(tableau.TableauEventType.ParameterValueChange, updateDateRangeFromInput);
         }
-        if (param.name === "Dynamic Start Date" || param.name === "Dynamic End Date") {
-            param.addEventListener(tableau.TableauEventType.ParameterValueChange, () => clearDateRangeInputIfNeeded(param.name === "Dynamic Start Date", param.name === "Dynamic End Date"));
+        if (param.name === "PARAM Date Start" || param.name === "PARAM Date End") {
+            param.addEventListener(tableau.TableauEventType.ParameterValueChange, () => clearDateRangeInputIfNeeded(param.name === "PARAM Date Start", param.name === "PARAM Date End"));
         }
     });
 }

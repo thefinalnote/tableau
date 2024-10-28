@@ -10,7 +10,10 @@
         <source-location>
             <url>https://thefinalnote.github.io/tableau/dynamic-parameters/index.html</url>
         </source-location>
-
+        
+        <!-- Base64-encoded icon example; replace with your own if desired -->
+        <icon>iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
+        //8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==</icon>
     </dashboard-extension>
     
     <resources>
