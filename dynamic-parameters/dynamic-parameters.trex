@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension version="1.0">
+<extension manifest-version="1">
     <name>Tableau Dynamic Parameters</name>
     <description>An extension to dynamically set date parameters based on user input.</description>
     <url>https://thefinalnote.github.io/tableau/dynamic-parameters/index.html</url>
-    <!-- <icon>https://yourusername.github.io/tableau-dynamic-parameters/icon.png</icon> <!-- Optional -->
+    <icon>https://thefinalnote.github.io/tableau/dynamic-parameters/icon.png</icon> <!-- Optional icon, if you have one -->
     <author>Masoud Yeganegi</author>
-    <company>The Final Note</company>
+    <company>TheFinalNote</company>
+    <version>1.0</version>
     <category>Custom</category>
 </extension>
