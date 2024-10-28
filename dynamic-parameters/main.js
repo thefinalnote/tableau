@@ -1,7 +1,7 @@
 let viz;
 
 function initializeViz() {
-    console.log("Viz is initialized in Tableau Desktop context.");
+    console.log("Viz initialized.");
     initializeParameterListeners(); // Initialize listeners to control parameters
 }
 
@@ -9,12 +9,14 @@ function initializeViz() {
 async function setDateRangeInput(value) {
     const params = await tableau.extensions.dashboardContent.dashboard.getParametersAsync();
     const dateRangeInputParam = params.find(p => p.name === "Date Range Input");
+    console.log("Setting Date Range Input to:", value);  // Debug log
     await dateRangeInputParam.changeValueAsync(value);
 }
 
 // Function to clear Date Range Input if PARAM Date Start or PARAM Date End is manually changed
 async function clearDateRangeInputIfNeeded(startDateChanged, endDateChanged) {
     if (startDateChanged || endDateChanged) {
+        console.log("Clearing Date Range Input due to manual change."); // Debug log
         await setDateRangeInput(""); // Clear Date Range Input
     }
 }
@@ -25,6 +27,8 @@ async function updateDateRangeFromInput() {
     const dateRangeInputParam = params.find(p => p.name === "Date Range Input");
     const dateRangeInput = dateRangeInputParam.getCurrentValue().value;
     
+    console.log("Date Range Input received:", dateRangeInput); // Debug log
+
     let parsedValue, unit;
     const match = dateRangeInput.match(/(\d+)\s*(y|yr|year|m|month|d|day)s?/i);
 
@@ -54,6 +58,9 @@ async function updateDateRangeFromInput() {
         // Update PARAM Date Start and PARAM Date End parameters
         const startDateParam = params.find(p => p.name === "PARAM Date Start");
         const endDateParam = params.find(p => p.name === "PARAM Date End");
+
+        console.log("Setting PARAM Date Start to:", startDate);  // Debug log
+        console.log("Setting PARAM Date End to today's date:", new Date()); // Debug log
 
         await startDateParam.changeValueAsync(startDate);
         await endDateParam.changeValueAsync(new Date()); // PARAM Date End is set to today's date
