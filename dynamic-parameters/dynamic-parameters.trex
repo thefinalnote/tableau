@@ -4,14 +4,18 @@
         <default-locale>en_US</default-locale>
         <name resource-id="name"/>
         <description>Dynamic Parameters Extension for Tableau</description>
-        <author name="Masoud Yeganegi" organization="TheFinalNote"/>
+        <author name="Masoud Yeganegi" email="thefinalnote.com@gmail.com" organization="TheFinalNote" website="https://thefinalnote.github.io"/>
         <min-api-version>1.1</min-api-version>
         
         <source-location>
             <url>https://thefinalnote.github.io/tableau/dynamic-parameters/index.html</url>
         </source-location>
         
-        <icon>https://thefinalnote.github.io/tableau/dynamic-parameters/icon.png</icon> <!-- Optional icon -->
+        <!-- Placeholder Base64-encoded icon; replace with your own if needed -->
+        <icon>iVBORw0KGgoAAAANSUhEUgAAAAUA
+        AAAFCAYAAACNbyblAAAAHElEQVQI12P4
+        //8/w38GIAXDIBKE0DHxgljNBAAO9TXL
+        0Y4OHwAAAABJRU5ErkJggg==</icon>
     </dashboard-extension>
     
     <resources>
