@@ -10,11 +10,7 @@
         <source-location>
             <url>https://thefinalnote.github.io/tableau/dynamic-parameters/index.html</url>
         </source-location>
-        
-        <icon>iVBORw0KGgoAAAANSUhEUgAAAAUA
-        AAAFCAYAAACNbyblAAAAHElEQVQI12P4
-        //8/w38GIAXDIBKE0DHxgljNBAAO9TXL
-        0Y4OHwAAAABJRU5ErkJggg==</icon>
+
     </dashboard-extension>
     
     <resources>
