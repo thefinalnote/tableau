@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="1.0">
+    <name>Tableau Dynamic Parameters</name>
+    <description>An extension to dynamically set date parameters based on user input.</description>
+    <url>https://yourusername.github.io/tableau-dynamic-parameters/index.html</url>
+    <!-- <icon>https://yourusername.github.io/tableau-dynamic-parameters/icon.png</icon> <!-- Optional -->
+    <author>Your Name</author>
+    <company>Your Company Name</company>
+    <category>Custom</category>
+</extension>
